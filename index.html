@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventario de Herramientas</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+  <div class="container">
+    <h1>📋 Inventario de Herramientas</h1>
+    <form id="formulario">
+      <input type="text" id="codigo" placeholder="Código" required />
+      <input type="text" id="descripcion" placeholder="Descripción" required />
+      <select id="movimiento">
+        <option value="Ingreso">Ingreso</option>
+        <option value="Egreso">Egreso</option>
+      </select>
+      <button type="submit">Registrar Movimiento</button>
+    </form>
+
+    <div id="registros"></div>
+
+    <button id="descargarExcel" style="display:none">📥 Descargar Excel</button>
+  </div>
+
+  <!-- Modal de ayuda -->
+  <button id="btn-ayuda">ℹ️ Ayuda</button>
+  <div id="modal-ayuda" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Guía rápida</h2>
+      <ol>
+        <li>Ingresá código, descripción y tipo de movimiento</li>
+        <li>Presioná "Registrar Movimiento"</li>
+        <li>Consultá los registros activos</li>
+        <li>Presioná "Devolver" para marcar como devuelta</li>
+        <li>Descargá el Excel si lo necesitás</li>
+      </ol>
+    </div>
+  </div>
+
+  <script src="xlsx.full.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
