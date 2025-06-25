@@ -34,11 +34,9 @@
       <button id="btn-limpiar" style="background:#dc3545;color:white;">🧹 Limpiar movimientos</button>
     </div>
 
-    <!-- Botones flotantes -->
     <button id="btn-ayuda">ℹ️ Ayuda</button>
     <button id="btn-ver-stock">📦 Ver Stock</button>
 
-    <!-- Ventana modal ayuda -->
     <div id="modal-ayuda" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -47,15 +45,14 @@
           <li>Ingresá código, descripción, cantidad y tipo de movimiento</li>
           <li>Si el código existe, se autocompleta y bloquea la descripción</li>
           <li>Consultá los egresos activos</li>
-          <li>Verificá el stock en la pestaña "📦 Stock"</li>
+          <li>Verificá el stock en la pestaña 📦</li>
         </ol>
       </div>
     </div>
 
-    <!-- Instalación PWA -->
     <div id="instalar-popup" class="popup">
       <div class="popup-content">
-        <p>¿Querés instalar esta app en tu dispositivo?<br><small>Accedé más rápido y sin conexión</small></p>
+        <p>¿Querés instalar esta app?<br><small>Accedé más rápido y sin conexión</small></p>
         <button id="btn-confirmar-instalar">📲 Instalar</button>
         <button id="btn-rechazar">Ahora no</button>
       </div>
@@ -91,5 +88,10 @@
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
 </body>
 </html>
